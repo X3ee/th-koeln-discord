@@ -15,14 +15,14 @@ class Bot extends Commando.Client {
 
   init() {
     // dynamically register our events based on the content of the events folder
-		fs.readdir("./src/events/", (err, files) => {
-			if (err) return console.error(err);
-			files.forEach(file => {
-				let eventFunction = require(`./events/${file}`);
-				let eventName = file.split(".")[0];
-				this.on(eventName, (...args) => eventFunction.run(this, ...args));
-			});
-		});
+    fs.readdir("./src/events/", (err, files) => {
+      if (err) return console.error(err);
+      files.forEach(file => {
+        let eventFunction = require(`./events/${file}`);
+        let eventName = file.split(".")[0];
+        this.on(eventName, (...args) => eventFunction.run(this, ...args));
+      });
+    });
 
     // set provider sqlite3 so we can save our settings
     this.setProvider(
