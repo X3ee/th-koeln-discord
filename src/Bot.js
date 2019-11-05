@@ -7,8 +7,8 @@ class Bot extends Commando.Client {
   constructor(token, ownerid, commandprefix) {
     super({
       "owner": (ownerid) ? ownerid : null,
-			"commandPrefix": (commandprefix) ? commandprefix : '-'
-		});
+      "commandPrefix": (commandprefix) ? commandprefix : '-'
+    });
     this.token = token;
     this.isReady = false;
   }
