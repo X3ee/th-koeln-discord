@@ -1,0 +1,14 @@
+{
+    "general" : {
+        "token" : "",
+        "ownerID" : [""],
+        "globalCommandPrefix" : "-"
+    },
+    "roles" : {
+        "ai" : "",
+        "wi" : "",
+        "mi" : "",
+        "itm" : ""
+    },
+    "roleChannel" : ""
+}
