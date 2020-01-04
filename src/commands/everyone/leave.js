@@ -14,14 +14,20 @@ module.exports = class leaveCommand extends commando.Command {
     });
   }
 
-  run (msg, args) {
-    if (msg.channel.id === config.roleChannel) {
+  run (msg) {
+    if (msg.channel.id !== config.roleChannel) {
       return;
     }
 
-    // TODO: check if user has no roles
-
     deleteCommandMessages(msg);
-    return msg.embed();
+
+    for (let key in config.roles) {
+      if (msg.member.roles.has(config.roles[key])) {
+        msg.member.roles.remove(config.roles[key]);
+        return msg.reply(`Die Rolle ${key.toUpperCase()} wurde entfernt.`);
+      }
+    };
+
+    return msg.reply("Du bist in keiner Rolle.");
   }
 };
