@@ -4,11 +4,13 @@
         "ownerID" : [""],
         "globalCommandPrefix" : "-"
     },
+
+    "roleChannel" : "",
+
     "roles" : {
         "ai" : "",
         "wi" : "",
         "mi" : "",
         "itm" : ""
-    },
-    "roleChannel" : ""
+    }
 }
